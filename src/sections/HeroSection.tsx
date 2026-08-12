@@ -122,7 +122,7 @@ export function HeroSection() {
               <div className="absolute bottom-0 left-0 right-0 p-5">
                 <p className="text-sm font-medium text-white">{PROFILE.name}</p>
                 <p className="text-xs text-emerald-300">
-                  {PROFILE.role} · {PROFILE.company}
+                  {PROFILE.role}
                 </p>
               </div>
             </div>

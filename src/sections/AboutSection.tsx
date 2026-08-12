@@ -1,5 +1,7 @@
 "use client";
 
+import { Award, Briefcase, MapPin } from "lucide-react";
+
 import { GlassCard } from "@/components/ui/GlassCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -18,54 +20,83 @@ export function AboutSection() {
           description="Passionate about building products that make a difference"
         />
 
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-          <ScrollReveal direction="left">
-            <GlassCard className="p-8 lg:p-10" glow="emerald">
-              <p className="mb-6 text-lg leading-relaxed text-gray-300">
-                {PROFILE.summary}
-              </p>
-              <p className="text-base leading-relaxed text-gray-400">
-                With over {PROFILE.experience} of experience at{" "}
-                {PROFILE.company}, I bring a unique blend of frontend
-                craftsmanship, backend architecture, and cloud infrastructure
-                expertise. I thrive on solving complex problems and delivering
-                solutions that scale.
-              </p>
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-stretch">
+          <ScrollReveal direction="left" className="h-full flex flex-col">
+            <GlassCard className="flex h-full flex-col justify-between p-8 lg:p-10" glow="emerald">
+              <div>
+                <div className="mb-6 flex flex-wrap gap-2">
+                  <Badge variant="outline" className="inline-flex items-center gap-1.5 text-xs text-emerald-400 border-emerald-500/20 bg-emerald-500/5">
+                    <Briefcase size={12} /> {PROFILE.role}
+                  </Badge>
+                  <Badge variant="outline" className="inline-flex items-center gap-1.5 text-xs text-gray-400 border-white/10 bg-white/5">
+                    <MapPin size={12} /> {PROFILE.location}
+                  </Badge>
+                </div>
+
+                <h3 className="mb-4 text-xl font-bold text-white">
+                  Engineering Overview
+                </h3>
+
+                <p className="mb-6 text-base leading-relaxed text-gray-300">
+                  {PROFILE.summary}
+                </p>
+                <p className="text-sm leading-relaxed text-gray-400">
+                  With over {PROFILE.experience} of engineering experience, I bring a unique blend of frontend
+                  craftsmanship, backend architecture, and cloud infrastructure
+                  expertise. I thrive on solving complex technical challenges and delivering
+                  scalable, production-grade applications.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between text-xs text-gray-500">
+                <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                  <Award size={14} /> Full Stack & AI Engineering
+                </span>
+                <span>{PROFILE.experience} Experience</span>
+              </div>
             </GlassCard>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" delay={0.1}>
-            <GlassCard className="p-8 lg:p-10">
-              <h3 className="mb-6 text-lg font-semibold text-white">
-                Core Expertise
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {HIGHLIGHTS.map((highlight, index) => (
-                  <ScrollReveal key={highlight} delay={index * 0.03}>
-                    <Badge variant="emerald">{highlight}</Badge>
-                  </ScrollReveal>
-                ))}
+          <ScrollReveal direction="right" delay={0.1} className="h-full flex flex-col">
+            <GlassCard className="flex h-full flex-col justify-between p-8 lg:p-10">
+              <div>
+                <h3 className="mb-4 text-xl font-bold text-white">
+                  Core Expertise & Competencies
+                </h3>
+
+                <div className="mb-8 flex flex-wrap gap-2">
+                  {HIGHLIGHTS.map((highlight) => (
+                    <Badge key={highlight} variant="emerald">
+                      {highlight}
+                    </Badge>
+                  ))}
+                </div>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  { label: "Years Experience", value: "4+" },
-                  { label: "Projects Delivered", value: "25+" },
-                  { label: "Technologies", value: "30+" },
-                  { label: "npm Packages", value: "3" },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center"
-                  >
-                    <div className="text-2xl font-bold text-emerald-400">
-                      {stat.value}
+              <div>
+                <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                  Key Metrics
+                </h4>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: "Years Experience", value: "4+" },
+                    { label: "Production Platforms", value: "5+" },
+                    { label: "Core Stack Tools", value: "30+" },
+                    { label: "Published Packages", value: "3" },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center"
+                    >
+                      <div className="text-2xl font-bold text-emerald-400">
+                        {stat.value}
+                      </div>
+                      <div className="mt-1 text-xs text-gray-500">
+                        {stat.label}
+                      </div>
                     </div>
-                    <div className="mt-1 text-xs text-gray-500">
-                      {stat.label}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </GlassCard>
           </ScrollReveal>

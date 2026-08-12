@@ -36,7 +36,7 @@ export function ResumeSection() {
                 </div>
                 <h3 className="text-xl font-bold text-white">{PROFILE.name}</h3>
                 <p className="text-sm text-emerald-400">{PROFILE.role}</p>
-                <p className="mt-1 text-xs text-gray-500">{PROFILE.company}</p>
+                <p className="mt-1 text-xs text-gray-500">{PROFILE.location}</p>
               </div>
 
               <div className="mb-6 space-y-3 text-sm">

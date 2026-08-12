@@ -28,13 +28,15 @@ export interface Project {
   description: string;
   features: string[];
   technologies: string[];
-  architecture: ArchitectureNode[];
-  flows: FlowStep[];
-  highlights: string[];
+  thirdPartyServices?: string[];
+  logoUrl?: string;
+  architecture?: ArchitectureNode[];
+  flows?: FlowStep[];
+  highlights?: string[];
   isFeatured?: boolean;
   links?: {
-    live?: string;
-    github?: string;
+    live?: string | null;
+    github?: string | null;
   };
 }
 
