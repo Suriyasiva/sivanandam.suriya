@@ -10,9 +10,8 @@ export const NAV_ITEMS = [
 export const FOOTER_LINKS = {
   navigation: NAV_ITEMS,
   social: [
-    { label: "GitHub", href: "https://github.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Twitter", href: "https://twitter.com" },
-    { label: "Email", href: "mailto:suriya@example.com" },
+    { label: "GitHub", href: "https://github.com/Suriyasiva" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/suriya-s-9ba383220/" },
+    { label: "Email", href: "mailto:sivanandam.suriya@gmail.com" },
   ],
 } as const;

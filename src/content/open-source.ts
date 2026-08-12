@@ -2,39 +2,25 @@ import type { OpenSourcePackage } from "@/types";
 
 export const NPM_PACKAGES: OpenSourcePackage[] = [
   {
-    id: "pkg-1",
-    name: "@suriya/react-hooks",
+    id: "nest-header-context",
+    name: "nest-header-context",
     description:
-      "Collection of production-ready React custom hooks for common patterns — debouncing, infinite scroll, local storage, and media queries.",
-    npmUrl: "https://www.npmjs.com",
-    githubUrl: "https://github.com",
-    downloads: "2.5k/week",
-    version: "1.2.0",
+      "NestJS module and interceptor for asynchronous header context propagation across request execution flows using Node.js AsyncLocalStorage.",
+    githubUrl: "https://github.com/Suriyasiva/nest-header-context",
+    version: "0.1.0",
   },
   {
-    id: "pkg-2",
-    name: "@suriya/nest-utils",
+    id: "ai-core",
+    name: "ai-core",
     description:
-      "Utility library for NestJS applications — decorators, guards, interceptors, and common middleware patterns.",
-    npmUrl: "https://www.npmjs.com",
-    githubUrl: "https://github.com",
-    downloads: "1.8k/week",
-    version: "2.0.1",
-  },
-  {
-    id: "pkg-3",
-    name: "@suriya/mcp-tools",
-    description:
-      "MCP server toolkit for building AI agent tools with TypeScript — schema validation, error handling, and tool registration.",
-    npmUrl: "https://www.npmjs.com",
-    githubUrl: "https://github.com",
-    downloads: "950/week",
-    version: "0.5.0",
+      "Unified AI client facade featuring provider abstraction, structured output validation with Zod, retry management, and timeout control.",
+    githubUrl: "https://github.com/Suriyasiva/ai-core",
+    version: "1.0.4",
   },
 ];
 
 export const GITHUB_STATS = {
-  username: "suriya-dev",
+  username: "Suriyasiva",
   repos: 42,
   followers: 128,
   contributions: 1247,

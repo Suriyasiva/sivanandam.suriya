@@ -15,12 +15,18 @@ export function OpenSourceSection() {
 
       <div className="relative mx-auto max-w-7xl">
         <SectionHeader
-          label="Open Source"
-          title="npm Packages"
-          description="Contributing to the developer ecosystem"
+          label="Open Source & Packages"
+          title="Published Packages"
+          description="Reusable tools and libraries published for software development"
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={
+            NPM_PACKAGES.length <= 2
+              ? "mx-auto max-w-4xl grid gap-6 md:grid-cols-2"
+              : "grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          }
+        >
           {NPM_PACKAGES.map((pkg, index) => (
             <ScrollReveal key={pkg.id} delay={index * 0.1}>
               <GlassCard className="group h-full p-6 lg:p-8" glow="gold">

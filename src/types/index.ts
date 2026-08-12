@@ -82,3 +82,13 @@ export interface ChartDataPoint {
   value: number;
   fullMark?: number;
 }
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  platform: string;
+  tags?: string[];
+  readTime?: string;
+}
