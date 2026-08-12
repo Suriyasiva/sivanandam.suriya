@@ -37,7 +37,7 @@ export function AIEngineeringSection() {
         <ScrollReveal delay={0.3}>
           <GlassCard className="mt-12 p-8 lg:p-10">
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
+              <div className="min-w-0">
                 <h3 className="mb-4 text-2xl font-bold text-white">
                   AI Integration Workflow
                 </h3>
@@ -63,13 +63,13 @@ export function AIEngineeringSection() {
                 </div>
               </div>
 
-              <div className="relative rounded-2xl border border-white/[0.06] bg-background-tertiary/50 p-6 font-mono text-sm">
+              <div className="min-w-0 w-full relative rounded-2xl border border-white/[0.06] bg-background-tertiary/50 p-4 sm:p-6 font-mono text-xs sm:text-sm">
                 <div className="mb-3 flex gap-2">
                   <div className="h-3 w-3 rounded-full bg-red-500/60" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500/60" />
                   <div className="h-3 w-3 rounded-full bg-emerald-500/60" />
                 </div>
-                <pre className="overflow-x-auto text-gray-400">
+                <pre className="min-w-0 w-full overflow-x-auto text-gray-400">
                   <code>{`// MCP Tool Registration
 server.tool("search_docs", {
   description: "Search documentation",

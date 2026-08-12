@@ -24,13 +24,17 @@ export function ContactSection() {
     event.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const subject = `Portfolio Inquiry from ${formState.name}`;
+    const body = `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`;
+    const mailtoUrl = `mailto:${PROFILE.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
 
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormState({ name: "", email: "", message: "" });
 
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setTimeout(() => setIsSubmitted(false), 4000);
   };
 
   return (

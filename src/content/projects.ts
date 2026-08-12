@@ -194,7 +194,7 @@ export const ARCHITECTURE_PATTERNS: ArchitecturePattern[] = [
     description:
       "Loosely coupled services communicating through events, enabling scalability and resilience.",
     icon: "Zap",
-    useCases: ["Lendroa loan processing", "Notification systems", "Audit logging"],
+    useCases: ["Async job processing", "Notification systems", "Audit logging"],
   },
   {
     id: "multi-tenant",
@@ -202,7 +202,7 @@ export const ARCHITECTURE_PATTERNS: ArchitecturePattern[] = [
     description:
       "Schema-per-tenant isolation ensuring data security, compliance, and independent tenant scaling.",
     icon: "Building",
-    useCases: ["Lendroa platform", "B2B SaaS products", "Enterprise software"],
+    useCases: ["Multi-tenant platforms", "B2B SaaS products", "Enterprise software"],
   },
   {
     id: "microservices",
