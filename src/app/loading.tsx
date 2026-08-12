@@ -1,12 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Loading() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="flex flex-col items-center gap-4">
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 animate-spin rounded-full border-2 border-emerald-500/20" />
-          <div className="absolute inset-0 animate-spin rounded-full border-2 border-transparent border-t-emerald-500" />
-        </div>
-        <p className="text-sm text-gray-400">Loading portfolio...</p>
+    <div className="relative flex min-h-screen items-center justify-center bg-[#070C14] text-white select-none">
+      <div className="absolute h-96 w-96 rounded-full bg-emerald-500/10 blur-[130px] pointer-events-none" />
+
+      <div className="relative flex items-center gap-3">
+        <span className="h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399] animate-pulse" />
+        <span className="font-sans text-3xl font-bold tracking-tight text-white">
+          Welcome
+        </span>
       </div>
     </div>
   );

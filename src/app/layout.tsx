@@ -7,6 +7,8 @@ import { ScrollProgress } from "@/features/ScrollProgress";
 import { CursorGlow } from "@/features/CursorGlow";
 import { PROFILE } from "@/content/profile";
 
+import { InitialPreloader } from "@/features/InitialPreloader";
+
 import "./globals.css";
 
 const inter = Inter({
@@ -70,6 +72,7 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full scroll-smooth`}
     >
       <body className="min-h-full bg-background text-foreground antialiased">
+        <InitialPreloader durationSeconds={3} />
         <ScrollProgress />
         <CursorGlow />
         <Navbar />
