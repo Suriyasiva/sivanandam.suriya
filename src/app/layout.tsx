@@ -5,6 +5,8 @@ import { Navbar } from "@/features/Navbar";
 import { Footer } from "@/features/Footer";
 import { ScrollProgress } from "@/features/ScrollProgress";
 import { CursorGlow } from "@/features/CursorGlow";
+import { ScrollToTop } from "@/features/ScrollToTop";
+import { DottedBackground } from "@/features/DottedBackground";
 import { PROFILE } from "@/content/profile";
 
 import { InitialPreloader } from "@/features/InitialPreloader";
@@ -59,6 +61,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [{ url: "/icon", type: "image/png", sizes: "64x64" }],
+    apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({
@@ -73,11 +79,13 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-background text-foreground antialiased">
         <InitialPreloader durationSeconds={3} />
+        <DottedBackground />
         <ScrollProgress />
         <CursorGlow />
         <Navbar />
-        <main>{children}</main>
+        <main className="relative z-10">{children}</main>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   );

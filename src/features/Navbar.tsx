@@ -4,14 +4,19 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Button } from "@/components/ui/Button";
 import { NAV_ITEMS } from "@/constants/navigation";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import { scrollToSection } from "@/lib/utils";
 import { cn } from "@/lib/utils";
+
+const SECTION_IDS = NAV_ITEMS.map((item) => item.href.replace("#", ""));
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,25 +52,36 @@ export function Navbar() {
             className="group flex items-center gap-2 cursor-pointer"
             aria-label="Go to top"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-sm font-bold text-white shadow-lg shadow-emerald-500/25">
-              S
-            </span>
-            <span className="hidden text-lg font-semibold text-white sm:block">
-              Suriya
-            </span>
+            <BrandLogo
+              className="group-hover:opacity-95"
+              wordmarkClassName="hidden sm:inline"
+            />
           </button>
 
           <div className="hidden items-center gap-1 md:flex">
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="group relative px-4 py-2 text-sm text-gray-400 transition-colors hover:text-white cursor-pointer"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 bg-emerald-500 transition-all duration-300 group-hover:w-3/4" />
-              </button>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const sectionId = item.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className={cn(
+                    "group relative px-4 py-2 text-sm transition-colors cursor-pointer",
+                    isActive ? "text-white" : "text-gray-400 hover:text-white"
+                  )}
+                >
+                  {item.label}
+                  <span
+                    className={cn(
+                      "absolute bottom-0 left-1/2 h-[2px] -translate-x-1/2 bg-emerald-500 transition-all duration-300",
+                      isActive ? "w-3/4" : "w-0 group-hover:w-3/4"
+                    )}
+                  />
+                </button>
+              );
+            })}
           </div>
 
           <div className="hidden md:block">
@@ -102,7 +118,12 @@ export function Navbar() {
                 <motion.button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="text-2xl font-medium text-gray-300 hover:text-white cursor-pointer"
+                  className={cn(
+                    "text-2xl font-medium cursor-pointer",
+                    activeSection === item.href.replace("#", "")
+                      ? "text-emerald-400"
+                      : "text-gray-300 hover:text-white"
+                  )}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}

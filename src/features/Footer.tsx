@@ -2,6 +2,7 @@
 
 import { Mail, Heart } from "lucide-react";
 
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { GitHubIcon, LinkedInIcon } from "@/components/ui/SocialIcons";
 
 import { FOOTER_LINKS } from "@/constants/navigation";
@@ -12,17 +13,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/[0.06] bg-background-secondary/50">
+    <footer className="relative z-10 border-t border-white/[0.06] bg-background-secondary/50">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-sm font-bold text-white">
-                S
-              </span>
-              <span className="text-lg font-semibold text-white">
-                {PROFILE.name}
-              </span>
+            <div className="mb-4">
+              <BrandLogo wordmark={PROFILE.name} />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
               Full Stack Software Engineer crafting exceptional digital

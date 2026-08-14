@@ -15,7 +15,7 @@ export const PROFILE = {
   location: "Chennai, Tamil Nadu",
   github: "https://github.com/Suriyasiva",
   linkedin: "https://www.linkedin.com/in/suriya-s-9ba383220/",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/suriya_sivanandam_ase-2.pdf",
   photoUrl: "/images/profile.png",
   photoAlt: "S. Suriya — Associate Software Engineer II",
 } as const;

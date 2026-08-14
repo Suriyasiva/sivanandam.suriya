@@ -6,6 +6,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Badge } from "@/components/ui/Badge";
+import { CountUpStat } from "@/components/ui/CountUpStat";
 import { AtmosphericBackground } from "@/features/AtmosphericBackground";
 import { HIGHLIGHTS, PROFILE } from "@/content/profile";
 
@@ -78,24 +79,10 @@ export function AboutSection() {
                   Key Metrics
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { label: "Years Experience", value: "4+" },
-                    { label: "Production Platforms", value: "5+" },
-                    { label: "Core Stack Tools", value: "30+" },
-                    { label: "Published Packages", value: "3" },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 text-center"
-                    >
-                      <div className="text-2xl font-bold text-emerald-400">
-                        {stat.value}
-                      </div>
-                      <div className="mt-1 text-xs text-gray-500">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
+                  <CountUpStat value={4} suffix="+" label="Years Experience" />
+                  <CountUpStat value={5} suffix="+" label="Production Platforms" />
+                  <CountUpStat value={30} suffix="+" label="Core Stack Tools" />
+                  <CountUpStat value={3} label="Published Packages" />
                 </div>
               </div>
             </GlassCard>
