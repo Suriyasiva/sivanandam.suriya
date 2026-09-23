@@ -40,7 +40,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative px-6 py-24 lg:py-32">
       <div className="absolute inset-0">
-        <div className="absolute bottom-0 left-1/2 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-emerald-500/[0.06] blur-[120px]" />
+        <div className="absolute bottom-0 left-1/2 h-[280px] w-[min(100%,420px)] -translate-x-1/2 rounded-full bg-emerald-500/[0.06] blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">

@@ -66,6 +66,10 @@ export const SKILL_GROUPS: SkillGroup[] = [
     skills: [
       { name: "MCP", icon: "Plug", proficiency: 88 },
       { name: "AI Agents", icon: "Bot", proficiency: 90 },
+      { name: "LLM", icon: "Sparkles", proficiency: 90 },
+      { name: "RAG", icon: "Library", proficiency: 88 },
+      { name: "LangChain", icon: "Link", proficiency: 86 },
+      { name: "LangGraph", icon: "GitBranch", proficiency: 84 },
       { name: "n8n", icon: "GitMerge", proficiency: 85 },
       { name: "Prompt Engineering", icon: "MessageSquare", proficiency: 92 },
       { name: "LLM Integration", icon: "Sparkles", proficiency: 90 },
@@ -100,9 +104,9 @@ export const SKILL_CHART_DATA = [
 ];
 
 export const TECH_DISTRIBUTION = [
-  { name: "TypeScript", value: 35 },
-  { name: "React/Next.js", value: 25 },
-  { name: "Node.js", value: 20 },
-  { name: "Mobile", value: 10 },
-  { name: "DevOps", value: 10 },
+  { name: "TypeScript", value: 80 },
+  { name: "React/Next.js", value: 80 },
+  { name: "Node.js", value: 80 },
+  { name: "Mobile", value: 60 },
+  { name: "DevOps", value: 40 },
 ];

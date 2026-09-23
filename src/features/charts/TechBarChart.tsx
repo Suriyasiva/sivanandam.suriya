@@ -16,12 +16,12 @@ export function TechBarChart({ data }: TechBarChartProps) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data} layout="vertical" margin={{ left: 20 }}>
-        <XAxis type="number" hide domain={[0, 40]} />
+        <XAxis type="number" hide domain={[0, 100]} />
         <YAxis
           type="category"
           dataKey="name"
-          tick={{ fill: "#9CA3AF", fontSize: 12 }}
-          width={100}
+          tick={{ fill: "#9CA3AF", fontSize: 11 }}
+          width={90}
           axisLine={false}
           tickLine={false}
         />

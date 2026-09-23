@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { Button } from "@/components/ui/Button";
 import { NAV_ITEMS } from "@/constants/navigation";
+import { PROFILE } from "@/content/profile";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { scrollToSection } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -20,10 +21,12 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 8);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -37,25 +40,33 @@ export function Navbar() {
     <>
       <motion.header
         className={cn(
-          "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
-          isScrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-white/[0.06]"
-            : "bg-transparent"
+          "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300",
+          "bg-background/95 backdrop-blur-xl border-b border-white/[0.06]",
+          isScrolled && "shadow-[0_8px_24px_rgba(0,0,0,0.25)]"
         )}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:h-20 lg:px-8">
+        <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:h-16 lg:px-8">
           <button
             onClick={() => scrollToSection("hero")}
-            className="group flex items-center gap-2 cursor-pointer"
+            className="group flex min-w-0 items-center gap-2.5 cursor-pointer"
             aria-label="Go to top"
           >
             <BrandLogo
-              className="group-hover:opacity-95"
-              wordmarkClassName="hidden sm:inline"
+              className="group-hover:opacity-95 min-w-0"
+              markClassName="h-8 w-8"
+              showWordmark={false}
             />
+            <span className="min-w-0 text-left">
+              <span className="block truncate text-sm font-semibold leading-tight text-white sm:text-base">
+                {PROFILE.name}
+              </span>
+              <span className="block truncate text-[10px] leading-tight text-emerald-400 sm:text-xs">
+                {PROFILE.role}
+              </span>
+            </span>
           </button>
 
           <div className="hidden items-center gap-1 md:flex">
@@ -95,11 +106,11 @@ export function Navbar() {
           </div>
 
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 hover:text-white md:hidden cursor-pointer"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-gray-400 hover:text-white md:hidden cursor-pointer"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </nav>
       </motion.header>

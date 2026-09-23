@@ -20,7 +20,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-20 sm:px-6 sm:pt-24"
     >
       <AtmosphericBackground variant="hero" />
 

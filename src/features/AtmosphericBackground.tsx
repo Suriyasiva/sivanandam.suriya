@@ -45,7 +45,7 @@ export function AtmosphericBackground({
           <div className="absolute inset-0 bg-[#0B1220]" />
           <div
             className={cn(
-              "absolute -top-24 left-[-10%] h-[70vh] w-[70vw] rounded-full blur-[120px]",
+              "absolute -top-24 left-0 h-[50vh] w-[80%] max-w-[520px] rounded-full blur-[120px]",
               variant === "hero"
                 ? "bg-emerald-500/[0.14]"
                 : "bg-emerald-500/[0.08]"
@@ -53,11 +53,11 @@ export function AtmosphericBackground({
           />
           <div
             className={cn(
-              "absolute bottom-[-20%] right-[-5%] h-[55vh] w-[55vw] rounded-full blur-[110px]",
+              "absolute bottom-0 right-0 h-[40vh] w-[70%] max-w-[420px] rounded-full blur-[110px]",
               variant === "hero" ? "bg-gold/[0.10]" : "bg-gold/[0.06]"
             )}
           />
-          <div className="absolute top-1/3 right-1/4 h-[40vh] w-[40vw] rounded-full bg-emerald-400/[0.05] blur-[100px]" />
+          <div className="absolute top-1/3 right-0 h-[30vh] w-[50%] max-w-[320px] rounded-full bg-emerald-400/[0.05] blur-[100px]" />
           <div
             className="absolute inset-0 opacity-[0.35]"
             style={{

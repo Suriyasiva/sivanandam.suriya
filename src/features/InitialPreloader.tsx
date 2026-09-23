@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const GREETINGS = [
   { text: "Hello", lang: "English" },
   { text: "வணக்கம்", lang: "Tamil" },
-  { text: "Namaste", lang: "Hindi" },
+  { text: "नमस्ते", lang: "Hindi" },
   { text: "Bonjour", lang: "French" },
   { text: "Hola", lang: "Spanish" },
   { text: "Ciao", lang: "Italian" },

@@ -26,11 +26,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${PROFILE.name} | Full Stack Software Engineer`,
+    default: `${PROFILE.name} | Senior Software Engineer`,
     template: `%s | ${PROFILE.name}`,
   },
   description: PROFILE.summary,
   keywords: [
+    "Senior Software Engineer",
     "Full Stack Developer",
     "Software Engineer",
     "React",
@@ -48,13 +49,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: `${PROFILE.name} | Full Stack Software Engineer`,
+    title: `${PROFILE.name} | Senior Software Engineer`,
     description: PROFILE.summary,
     siteName: `${PROFILE.name} Portfolio`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${PROFILE.name} | Full Stack Software Engineer`,
+    title: `${PROFILE.name} | Senior Software Engineer`,
     description: PROFILE.summary,
   },
   robots: {
@@ -62,8 +63,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: "/icon", type: "image/png", sizes: "64x64" }],
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "64x64" },
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
     apple: [{ url: "/apple-icon", type: "image/png", sizes: "180x180" }],
+    shortcut: ["/icon"],
   },
 };
 
@@ -83,7 +88,7 @@ export default function RootLayout({
         <ScrollProgress />
         <CursorGlow />
         <Navbar />
-        <main className="relative z-10">{children}</main>
+        <main className="relative z-10 w-full max-w-[100vw] overflow-x-hidden">{children}</main>
         <Footer />
         <ScrollToTop />
       </body>

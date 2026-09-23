@@ -21,7 +21,7 @@ export function Footer() {
               <BrandLogo wordmark={PROFILE.name} />
             </div>
             <p className="text-sm leading-relaxed text-gray-400">
-              Full Stack Software Engineer crafting exceptional digital
+              Full Stack & Senior Software Engineer crafting exceptional digital
               experiences with engineering excellence.
             </p>
           </div>
