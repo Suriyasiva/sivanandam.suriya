@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const GREETINGS = [
-  { text: "Hello", lang: "English" },
   { text: "வணக்கம்", lang: "Tamil" },
+  { text: "Hello", lang: "English" },
   { text: "नमस्ते", lang: "Hindi" },
-  { text: "Bonjour", lang: "French" },
-  { text: "Hola", lang: "Spanish" },
-  { text: "Ciao", lang: "Italian" },
+  { text: "നമസ്കാരം", lang: "Malayalam" },
+  { text: "ನಮಸ್ಕಾರ", lang: "Kannada" },
+  { text: "નમસ્તે", lang: "Gujarati" },
   { text: "Welcome", lang: "English" },
 ];
 
