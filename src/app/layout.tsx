@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+
+import "@fontsource/bai-jamjuree/400.css";
+import "@fontsource/bai-jamjuree/500.css";
+import "@fontsource/bai-jamjuree/600.css";
+import "@fontsource/bai-jamjuree/700.css";
 
 import { Navbar } from "@/features/Navbar";
 import { Footer } from "@/features/Footer";
@@ -12,12 +17,6 @@ import { PROFILE } from "@/content/profile";
 import { InitialPreloader } from "@/features/InitialPreloader";
 
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -80,9 +79,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} h-full scroll-smooth`}
+      className={`${geistMono.variable} h-full scroll-smooth`}
     >
-      <body className="min-h-full bg-background text-foreground antialiased">
+      <body className="min-h-full bg-background font-sans text-foreground antialiased">
         <InitialPreloader durationSeconds={3} />
         <DottedBackground />
         <ScrollProgress />

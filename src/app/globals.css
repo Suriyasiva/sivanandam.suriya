@@ -24,7 +24,7 @@
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
-  --font-sans: var(--font-inter);
+  --font-sans: "Bai Jamjuree", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -55,7 +55,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: "Bai Jamjuree", ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
   max-width: 100%;
   position: relative;
